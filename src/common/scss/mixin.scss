@@ -11,9 +11,27 @@
   }
 }
 
-@mixin background-image($url: "@2x.png"){
+@mixin background-image($url: decrease_1){
   background-image:url($url + "@2x.png");
   @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-radio: 3){
-  background-image:url($url + "@3x.png")
+    background-image:url($url + "@3x.png");
+  }
 }
+
+@mixin icon {
+  &.decrease{
+    @include background-image(decrease_1);
+  }
+  &.discount{
+    @include background-image(discount_1);
+  }
+  &.guarantee{
+    @include background-image(guarantee_1);
+  }
+  &.invoice{
+    @include background-image(invoice_1);
+  }
+  &.special{
+    @include background-image(special_1);
+  }
 }
