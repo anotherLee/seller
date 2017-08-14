@@ -11,6 +11,12 @@
   }
 }
 
+@mixin border-bottom-1px-none(){
+  &:after{
+    display:none;
+  }
+}
+
 @mixin background-image($url: decrease_1){
   background-image:url($url + "@2x.png");
   @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-radio: 3){

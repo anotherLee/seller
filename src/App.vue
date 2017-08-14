@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div id="app">
     <v-header v-bind:seller="seller"></v-header>
     <div class="nav border-1px">
@@ -29,6 +29,8 @@
       return {
         seller: {}
       }
+    },
+    methods: {
     },
     created () {
       this.$http.get('/api/seller').then((response) => {
