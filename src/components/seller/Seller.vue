@@ -330,7 +330,7 @@
           font-size:12px;
           font-weight:200;
           color:rgb(7,17,27);
-          border-top:1px solid rgba(7,17,27,0.2);
+          border-top:1px solid rgba(7,17,27,0.1);
         }
       }
     }
