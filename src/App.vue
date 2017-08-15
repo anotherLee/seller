@@ -19,7 +19,6 @@
 </template>
 
 <script>
-  let ERR_OK = 0
   import Header from './components/header/Header.vue'
   export default{
     components: {
@@ -33,11 +32,12 @@
     methods: {
     },
     created () {
-      this.$http.get('/api/seller').then((response) => {
+      this.$http.get('../static/data.json').then((response) => {
         response = response.body
-        if (response.errno === ERR_OK) {
-          this.seller = response.data
-        }
+        this.seller = response.seller
+        console.log(response.data)
+      }, function () {
+        alert('请求失败')
       })
     }
   }

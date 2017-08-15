@@ -45,7 +45,6 @@
 </template>
 
 <script>
-  let ERR_OK = 0
   import BScroll from 'better-scroll'
   import Shopcart from '../shopcart/Shopcart.vue'
   import Cartcontrol from '../cartcontrol/Cartcontrol.vue'
@@ -79,15 +78,13 @@
       }
     },
     created () {
-      this.$http.get('api/goods').then((response) => {
+      this.$http.get('../../../static/data.json').then((response) => {
         response = response.body
-        if (ERR_OK === 0) {
-          this.goods = response.data
-          this.$nextTick(() => {
-            this._calculateHeight()
-            this._initScroll()
-          })
-        }
+        this.goods = response.goods
+        this.$nextTick(() => {
+          this._calculateHeight()
+          this._initScroll()
+        })
       })
     },
     methods: {

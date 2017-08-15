@@ -51,7 +51,6 @@
   import Split from '../split/split.vue'
   import Ratingselect from '../ratingselect/Ratingselect.vue'
 
-  let ERR_OK = 0
   export default{
     data () {
       return {
@@ -93,17 +92,13 @@
       }
     },
     created () {
-      this.$http.get('./api/seller').then((response) => {
+      this.$http.get('../../../static/data.json').then((response) => {
         response = response.body
-        if (response.errno === ERR_OK) {
-          this.seller = response.data
-        }
+        this.seller = response.seller
       })
-      this.$http.get('./api/ratings').then((response) => {
+      this.$http.get('../../../static/data.json').then((response) => {
         response = response.body
-        if (response.errno === ERR_OK) {
-          this.ratings = response.data
-        }
+        this.ratings = response.ratings
       })
     },
     components: {
