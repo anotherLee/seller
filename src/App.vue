@@ -35,7 +35,6 @@
       this.$http.get('../static/data.json').then((response) => {
         response = response.body
         this.seller = response.seller
-        console.log(response.data)
       }, function () {
         alert('请求失败')
       })
