@@ -42,7 +42,7 @@
 <style lang="scss">
   .stars{
     span{
-      display:inline-block; width:15px; height:15px; margin-right:22px;
+      display:inline-block; width:15px; height:15px; margin-right:8px;
       background-size: 15px 15px; background-repeat:no-repeat;
       &:last-child{
         margin-right:0;

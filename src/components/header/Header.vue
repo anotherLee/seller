@@ -168,7 +168,7 @@
     }
 
     .detail{
-      position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(7,17,27,0.8); z-index:5;
+      position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(7,17,27,0.8); z-index:20;
       overflow:auto;
       &.fade-enter, &.fade-leave-to{
         opacity:0; background-color:rgba(7,17,27,0);
