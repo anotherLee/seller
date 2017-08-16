@@ -84,14 +84,14 @@
       this.goods = this.data.goods
       console.log(this.goods)
       console.log('xxx')
-//      this.$http.get('../../../static/data.json').then((response) => {
-//        response = response.body
-//        this.goods = response.goods
-      this.$nextTick(() => {
-        this._calculateHeight()
-        this._initScroll()
+      this.$http.get('seller/static/data.json').then((response) => {
+        response = response.body
+        this.goods = response.goods
+        this.$nextTick(() => {
+          this._calculateHeight()
+          this._initScroll()
+        })
       })
-//      })
     },
     methods: {
       clickMenu (index, event) {
