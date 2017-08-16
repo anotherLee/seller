@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-      {{'请求改成绝对路径,添加了seller在路径里面'}}
+
       <Split></Split>
 
       <div class="bulletin">

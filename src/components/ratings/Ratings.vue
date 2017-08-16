@@ -55,10 +55,10 @@
     props: ['data'],
     data () {
       return {
-//        seller: {},
-        seller: this.data.seller,
-//        ratings: [],
-        ratings: this.data.ratings,
+        seller: {},
+//        seller: this.data.seller,
+        ratings: [],
+//        ratings: this.data.ratings,
         allRatings: {},
         description: {
           all: '全部',
@@ -95,14 +95,14 @@
       }
     },
     created () {
-//      this.$http.get('../../../static/data.json').then((response) => {
-//        response = response.body
-//        this.seller = response.seller
-//      })
-//      this.$http.get('../../../static/data.json').then((response) => {
-//        response = response.body
-//        this.ratings = response.ratings
-//      })
+      this.$http.get('seller/static/data.json').then((response) => {
+        response = response.body
+        this.seller = response.seller
+      })
+      this.$http.get('seller/static/data.json').then((response) => {
+        response = response.body
+        this.ratings = response.ratings
+      })
     },
     components: {
       Star,
