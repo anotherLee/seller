@@ -2,7 +2,7 @@
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul class="menu-list">
-        <li class="menu-item border-1px" v-for="(item,index) in data.goods" v-bind:class="{current: index === currentIndex}" @click="clickMenu(index, $event)">
+        <li class="menu-item border-1px" v-for="(item,index) in goods" v-bind:class="{current: index === currentIndex}" @click="clickMenu(index, $event)">
           <div class="span-wrapper">
             <span class="icon" v-show="item.type > -1" v-bind:class="classNames[item.type]"></span><span class="text">{{item.name}}</span>
           </div>
@@ -59,8 +59,8 @@
     },
     data () {
       return {
-//        goods: [],
-        goods: this.data.goods,
+        goods: [],
+//        goods: this.data.goods,
         classNames: ['decrease', 'discount', 'special', 'invoice', 'guarantee'],
         listHeight: [],
         scrollY: 0,
@@ -80,6 +80,10 @@
       }
     },
     created () {
+      console.log('xxx')
+      this.goods = this.data.goods
+      console.log(this.goods)
+      console.log('xxx')
 //      this.$http.get('../../../static/data.json').then((response) => {
 //        response = response.body
 //        this.goods = response.goods
