@@ -86,9 +86,11 @@
   import Split from '../split/split.vue'
 
   export default{
+    props: ['data'],
     data () {
       return {
-        seller: {},
+//        seller: {},
+        seller: this.data.seller,
         collected: false,
         classMap: ['decrease', 'discount', 'special', 'invoice', 'guarantee']
       }
@@ -100,10 +102,10 @@
       }
     },
     created () {
-      this.$http.get('../../../static/data.json').then((response) => {
-        response = response.body
-        this.seller = response.seller
-      })
+//      this.$http.get('../../../static/data.json').then((response) => {
+//        response = response.body
+//        this.seller = response.seller
+//      })
     },
     components: {
       Star,

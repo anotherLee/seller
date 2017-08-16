@@ -2,14 +2,14 @@
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul class="menu-list">
-        <li class="menu-item border-1px" v-for="(item,index) in goods" v-bind:class="{current: index === currentIndex}" @click="clickMenu(index, $event)">
+        <li class="menu-item border-1px" v-for="(item,index) in data.goods" v-bind:class="{current: index === currentIndex}" @click="clickMenu(index, $event)">
           <div class="span-wrapper">
             <span class="icon" v-show="item.type > -1" v-bind:class="classNames[item.type]"></span><span class="text">{{item.name}}</span>
           </div>
         </li>
       </ul>
     </div>
-    {{101010}}
+
     <div class="foods-wrapper" ref="foodsWrapper">
       <ul>
         <li class="food-list food-list-hook" v-for="item in goods">
