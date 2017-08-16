@@ -9,7 +9,7 @@
         </li>
       </ul>
     </div>
-    {{888}}
+    {{101010}}
     <div class="foods-wrapper" ref="foodsWrapper">
       <ul>
         <li class="food-list food-list-hook" v-for="item in goods">
@@ -51,6 +51,7 @@
   import Food from '../food/food.vue'
 
   export default{
+    props: ['data'],
     components: {
       Shopcart,
       Cartcontrol,
@@ -58,7 +59,8 @@
     },
     data () {
       return {
-        goods: [],
+//        goods: [],
+        goods: this.data.goods,
         classNames: ['decrease', 'discount', 'special', 'invoice', 'guarantee'],
         listHeight: [],
         scrollY: 0,
@@ -78,14 +80,14 @@
       }
     },
     created () {
-      this.$http.get('../../../static/data.json').then((response) => {
-        response = response.body
-        this.goods = response.goods
-        this.$nextTick(() => {
-          this._calculateHeight()
-          this._initScroll()
-        })
+//      this.$http.get('../../../static/data.json').then((response) => {
+//        response = response.body
+//        this.goods = response.goods
+      this.$nextTick(() => {
+        this._calculateHeight()
+        this._initScroll()
       })
+//      })
     },
     methods: {
       clickMenu (index, event) {

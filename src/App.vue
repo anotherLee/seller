@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <router-view></router-view>
+    <router-view :data="data"></router-view>
 
   </div>
 </template>
@@ -26,7 +26,8 @@
     },
     data () {
       return {
-        seller: {}
+        seller: {},
+        data: {}
       }
     },
     methods: {
@@ -34,6 +35,7 @@
     created () {
       this.$http.get('../static/data.json').then((response) => {
         response = response.body
+        this.data = response
         this.seller = response.seller
       }, function () {
         alert('请求失败')
