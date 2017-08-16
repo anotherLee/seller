@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-      {{'请求改成绝对路径'}}
+      {{'请求改成绝对路径,添加了seller在路径里面'}}
       <Split></Split>
 
       <div class="bulletin">
@@ -152,7 +152,7 @@
       }
     },
     created () {
-      this.$http.get('/static/data.json').then((response) => {
+      this.$http.get('seller/static/data.json').then((response) => {
         response = response.body
         this.seller = response.seller
       })
