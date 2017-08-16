@@ -9,7 +9,7 @@
         </li>
       </ul>
     </div>
-    {{555}}
+    {{666}}
     <div class="foods-wrapper" ref="foodsWrapper">
       <ul>
         <li class="food-list food-list-hook" v-for="item in goods">
